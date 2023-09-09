@@ -22,6 +22,7 @@ class MusicPlayer:
         self.stop_button.pack()
         self.browse_button = tk.Button(root, text="Browse", command=self.browse_music)
         self.browse_button.pack()
+        
     def play_music(self):
         if self.current_song:
             if not self.playing:
@@ -33,10 +34,12 @@ class MusicPlayer:
                 mixer.music.pause()
                 self.play_button.config(text="Play")
                 self.playing = False
+                
     def stop_music(self):
         mixer.music.stop()
         self.play_button.config(text="Play")
         self.playing = False
+        
     def browse_music(self):
         self.current_song = tk.filedialog.askopenfilename(initialdir=os.getcwd(), title="Select Song",
                                                          filetypes=(("Audio Files", "*.mp3"), ("All Files", "*.*")))

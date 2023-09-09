@@ -1,0 +1,11 @@
+site_name: My Personal Project
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - index.md
+  - music_app.md
